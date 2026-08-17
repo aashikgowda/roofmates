@@ -57,7 +57,7 @@ Every other tool solves one slice. Splitwise handles money but knows nothing
 about your groceries or chores; a shared note holds a list but can't do the math
 or the rotation; a chore app pings you but can't split the electric bill. Roofmates
 is the *one place* for all of it — so there's a single link the whole house
-actually opens, instead of four apps only one person ever checks. It pairs the
+actually opens, instead of three apps only one person ever checks. It pairs the
 *speed* of a group chat with the *memory and math* of a real ledger, without the
 accounts and setup that make heavier apps a chore in themselves. Small scope,
 sharp execution.
