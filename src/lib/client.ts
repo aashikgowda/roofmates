@@ -107,6 +107,28 @@ export const api = {
     fetch(`/api/households/${code}/groceries/${id}`, {
       method: "DELETE",
     }).then(jsonOrThrow),
+
+  addChore: (
+    code: string,
+    body: { name: string; cadenceDays: number; participantIds: string[] }
+  ) =>
+    fetch(`/api/households/${code}/chores`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    }).then(jsonOrThrow),
+
+  deleteChore: (code: string, id: string) =>
+    fetch(`/api/households/${code}/chores/${id}`, {
+      method: "DELETE",
+    }).then(jsonOrThrow),
+
+  setVacation: (code: string, memberId: string, onVacation: boolean) =>
+    fetch(`/api/households/${code}/members/${memberId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ onVacation }),
+    }).then(jsonOrThrow),
 };
 
 export function money(n: number): string {
@@ -114,4 +136,13 @@ export function money(n: number): string {
     style: "currency",
     currency: "USD",
   }).format(n);
+}
+
+// Format a YYYY-MM-DD string as e.g. "Aug 24" (date-only, no time-zone shift).
+export function shortDate(iso: string): string {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
 }

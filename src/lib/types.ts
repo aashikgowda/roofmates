@@ -2,6 +2,17 @@ export type Member = {
   id: string;
   household_id: string;
   name: string;
+  on_vacation: boolean;
+  created_at: string;
+};
+
+export type Chore = {
+  id: string;
+  household_id: string;
+  name: string;
+  cadence_days: number;
+  participant_ids: string[];
+  start_date: string; // YYYY-MM-DD
   created_at: string;
 };
 
@@ -63,6 +74,7 @@ export type HouseholdData = {
   expenses: Expense[]; // real expenses only (is_settlement = false)
   payments: Payment[]; // recorded settle-up payments
   groceries: Grocery[];
+  chores: Chore[];
   balances: Record<string, number>; // member id -> net balance (positive = owed money)
   settlements: Settlement[]; // suggested transfers to reach zero
 };

@@ -7,9 +7,10 @@ import { api, getIdentity, setIdentity, type Identity } from "@/lib/client";
 import IdentityGate from "@/components/IdentityGate";
 import ExpensesPanel from "@/components/ExpensesPanel";
 import GroceriesPanel from "@/components/GroceriesPanel";
+import ChoresPanel from "@/components/ChoresPanel";
 import ShareBar from "@/components/ShareBar";
 
-type Tab = "expenses" | "groceries";
+type Tab = "expenses" | "groceries" | "chores";
 
 export default function Dashboard({ code }: { code: string }) {
   const [data, setData] = useState<HouseholdData | null>(null);
@@ -102,23 +103,20 @@ export default function Dashboard({ code }: { code: string }) {
           >
             🛒 Groceries
           </TabBtn>
+          <TabBtn active={tab === "chores"} onClick={() => setTab("chores")}>
+            🧹 Chores
+          </TabBtn>
         </nav>
 
         <div className="mt-5">
-          {tab === "expenses" ? (
-            <ExpensesPanel
-              data={data}
-              me={me}
-              code={code}
-              onChange={refresh}
-            />
-          ) : (
-            <GroceriesPanel
-              data={data}
-              me={me}
-              code={code}
-              onChange={refresh}
-            />
+          {tab === "expenses" && (
+            <ExpensesPanel data={data} me={me} code={code} onChange={refresh} />
+          )}
+          {tab === "groceries" && (
+            <GroceriesPanel data={data} me={me} code={code} onChange={refresh} />
+          )}
+          {tab === "chores" && (
+            <ChoresPanel data={data} me={me} code={code} onChange={refresh} />
           )}
         </div>
       </div>

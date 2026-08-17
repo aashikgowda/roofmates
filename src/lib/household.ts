@@ -32,26 +32,32 @@ export async function loadHousehold(
   if (error) throw error;
   if (!household) return null;
 
-  const [membersRes, expensesRes, splitsRes, groceriesRes] = await Promise.all([
-    supabase
-      .from("members")
-      .select()
-      .eq("household_id", household.id)
-      .order("created_at"),
-    supabase
-      .from("expenses")
-      .select()
-      .eq("household_id", household.id)
-      .order("created_at", { ascending: false }),
-    supabase.from("expense_splits").select(),
-    supabase
-      .from("groceries")
-      .select()
-      .eq("household_id", household.id)
-      .order("created_at", { ascending: false }),
-  ]);
+  const [membersRes, expensesRes, splitsRes, groceriesRes, choresRes] =
+    await Promise.all([
+      supabase
+        .from("members")
+        .select()
+        .eq("household_id", household.id)
+        .order("created_at"),
+      supabase
+        .from("expenses")
+        .select()
+        .eq("household_id", household.id)
+        .order("created_at", { ascending: false }),
+      supabase.from("expense_splits").select(),
+      supabase
+        .from("groceries")
+        .select()
+        .eq("household_id", household.id)
+        .order("created_at", { ascending: false }),
+      supabase
+        .from("chores")
+        .select()
+        .eq("household_id", household.id)
+        .order("created_at"),
+    ]);
 
-  for (const r of [membersRes, expensesRes, splitsRes, groceriesRes]) {
+  for (const r of [membersRes, expensesRes, splitsRes, groceriesRes, choresRes]) {
     if (r.error) throw r.error;
   }
 
@@ -99,6 +105,7 @@ export async function loadHousehold(
     expenses,
     payments,
     groceries: groceriesRes.data ?? [],
+    chores: choresRes.data ?? [],
     balances,
     settlements,
   };
