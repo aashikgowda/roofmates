@@ -76,7 +76,7 @@ export const api = {
   // table, so deleting one uses deleteExpense above.
   addSettlement: (
     code: string,
-    body: { from: string; to: string; amount: number }
+    body: { from: string; to: string; amount: number; actingMemberId: string }
   ) =>
     fetch(`/api/households/${code}/settlements`, {
       method: "POST",

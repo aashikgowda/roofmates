@@ -12,7 +12,7 @@ export async function POST(
 ) {
   try {
     const { code } = await params;
-    const { from, to, amount } = await req.json();
+    const { from, to, amount, actingMemberId } = await req.json();
 
     const amt = Number(amount);
     if (!from || !to)
@@ -24,6 +24,12 @@ export async function POST(
       return NextResponse.json(
         { error: "Payer and recipient must be different." },
         { status: 400 }
+      );
+    // You can only settle a payment you're part of (paying or receiving).
+    if (actingMemberId !== from && actingMemberId !== to)
+      return NextResponse.json(
+        { error: "You can only settle payments that involve you." },
+        { status: 403 }
       );
     if (!Number.isFinite(amt) || amt <= 0)
       return NextResponse.json(

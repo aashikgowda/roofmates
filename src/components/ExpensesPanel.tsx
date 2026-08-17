@@ -150,7 +150,12 @@ function BalanceCard({
     const s = settlements[i];
     setSettling(i);
     try {
-      await api.addSettlement(code, { from: s.from, to: s.to, amount: s.amount });
+      await api.addSettlement(code, {
+        from: s.from,
+        to: s.to,
+        amount: s.amount,
+        actingMemberId: meId,
+      });
       await onChange();
     } finally {
       setSettling(null);
@@ -201,13 +206,19 @@ function BalanceCard({
                     <span className="tabular-nums font-medium">
                       {money(s.amount)}
                     </span>
-                    <button
-                      onClick={() => settle(i)}
-                      disabled={settling !== null}
-                      className="rounded-lg border border-accent px-2.5 py-1 text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-colors disabled:opacity-50"
-                    >
-                      {settling === i ? "Settling…" : "Settle"}
-                    </button>
+                    {involvesMe ? (
+                      <button
+                        onClick={() => settle(i)}
+                        disabled={settling !== null}
+                        className="rounded-lg border border-accent px-2.5 py-1 text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-colors disabled:opacity-50"
+                      >
+                        {settling === i ? "Settling…" : "Settle"}
+                      </button>
+                    ) : (
+                      <span className="rounded-lg px-2.5 py-1 text-xs text-muted">
+                        their settle-up
+                      </span>
+                    )}
                   </span>
                 </li>
               );
