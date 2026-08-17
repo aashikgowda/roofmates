@@ -5,7 +5,7 @@
 ## Roofmates launches as the one app for everything roommates share
 
 *A dead-simple web app that splits expenses, keeps a shared grocery list, and
-rotates chores — all in one place, so housemates stop juggling four different
+rotates chores — all in one place, so housemates stop juggling different
 apps.*
 
 Today we're launching **Roofmates**, a single home for the everyday logistics of
@@ -23,7 +23,7 @@ cleaning and taking out the trash. The problem isn't that tools for these don't
 exist — it's that they're scattered across *different apps*. You settle up in
 Venmo or Splitwise, keep the shopping list in Notes or a group chat, and track
 whose turn it is to clean on a whiteboard, a spreadsheet, or not at all. Nobody
-wants to install and check four apps to run one apartment, so most of it falls
+wants to install and check three apps to run one apartment, so most of it falls
 back into the group chat and gets lost. The result is predictable — someone feels
 they paid more than their share, nobody remembers who owes whom, "can you grab
 milk?" scrolls out of view, and the chores quietly stop rotating. It's a small,
