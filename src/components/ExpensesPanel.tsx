@@ -29,6 +29,8 @@ export default function ExpensesPanel({
         settlements={data.settlements}
         meId={me.id}
         nameOf={nameOf}
+        code={code}
+        onChange={onChange}
       />
 
       <AddExpenseForm
@@ -79,6 +81,48 @@ export default function ExpensesPanel({
           </ul>
         )}
       </section>
+
+      {data.payments.length > 0 && (
+        <section>
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-muted">
+            Payments
+          </h2>
+          <ul className="mt-2 space-y-2">
+            {data.payments.map((p) => (
+              <li
+                key={p.id}
+                className="flex items-center gap-3 rounded-xl border bg-card px-4 py-3"
+              >
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-accent/10 text-accent">
+                  ✓
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="font-medium truncate">
+                    {p.from === me.id ? "You" : nameOf(p.from)}{" "}
+                    <span className="text-muted">paid</span>{" "}
+                    {p.to === me.id ? "you" : nameOf(p.to)}
+                  </p>
+                  <p className="text-sm text-muted">settle up</p>
+                </div>
+                <span className="font-semibold tabular-nums text-accent">
+                  {money(p.amount)}
+                </span>
+                <button
+                  onClick={async () => {
+                    await api.deleteExpense(code, p.id);
+                    await onChange();
+                  }}
+                  className="text-muted hover:text-danger text-sm"
+                  title="Undo payment"
+                  aria-label="Undo payment"
+                >
+                  ✕
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }
@@ -88,15 +132,30 @@ function BalanceCard({
   settlements,
   meId,
   nameOf,
+  code,
+  onChange,
 }: {
   myBalance: number;
   settlements: HouseholdData["settlements"];
   meId: string;
   nameOf: (id: string) => string;
+  code: string;
+  onChange: () => Promise<HouseholdData>;
 }) {
+  const [settling, setSettling] = useState<number | null>(null);
   const rounded = Math.round(myBalance * 100) / 100;
-  const status =
-    rounded > 0 ? "owed" : rounded < 0 ? "owe" : "even";
+  const status = rounded > 0 ? "owed" : rounded < 0 ? "owe" : "even";
+
+  async function settle(i: number) {
+    const s = settlements[i];
+    setSettling(i);
+    try {
+      await api.addSettlement(code, { from: s.from, to: s.to, amount: s.amount });
+      await onChange();
+    } finally {
+      setSettling(null);
+    }
+  }
 
   return (
     <section className="rounded-2xl border bg-card p-5 shadow-sm">
@@ -117,7 +176,7 @@ function BalanceCard({
           ? "you're owed overall"
           : status === "owe"
             ? "you owe overall"
-            : "you're all settled up"}
+            : "you're all settled up 🎉"}
       </p>
 
       {settlements.length > 0 && (
@@ -125,26 +184,38 @@ function BalanceCard({
           <p className="text-xs font-medium uppercase tracking-wide text-muted">
             Suggested settle-up
           </p>
-          <ul className="mt-2 space-y-1.5">
+          <ul className="mt-2 space-y-2">
             {settlements.map((s, i) => {
               const involvesMe = s.from === meId || s.to === meId;
               return (
                 <li
                   key={i}
-                  className={`flex items-center justify-between text-sm ${
-                    involvesMe ? "font-medium" : "text-muted"
-                  }`}
+                  className="flex items-center justify-between gap-3 text-sm"
                 >
-                  <span>
+                  <span className={involvesMe ? "font-medium" : "text-muted"}>
                     {s.from === meId ? "You" : nameOf(s.from)}{" "}
                     <span className="text-muted">→</span>{" "}
                     {s.to === meId ? "you" : nameOf(s.to)}
                   </span>
-                  <span className="tabular-nums">{money(s.amount)}</span>
+                  <span className="flex items-center gap-2">
+                    <span className="tabular-nums font-medium">
+                      {money(s.amount)}
+                    </span>
+                    <button
+                      onClick={() => settle(i)}
+                      disabled={settling !== null}
+                      className="rounded-lg border border-accent px-2.5 py-1 text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-colors disabled:opacity-50"
+                    >
+                      {settling === i ? "Settling…" : "Settle"}
+                    </button>
+                  </span>
                 </li>
               );
             })}
           </ul>
+          <p className="mt-2 text-xs text-muted">
+            Tap “Settle” once the payment has been sent (e.g. via Venmo).
+          </p>
         </div>
       )}
     </section>

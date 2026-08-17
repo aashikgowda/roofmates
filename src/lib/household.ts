@@ -64,26 +64,40 @@ export async function loadHousehold(
     splitsByExpense.set(s.expense_id, arr);
   }
 
-  const expenses = (expensesRes.data ?? []).map((e) => ({
+  // Full ledger: both real expenses and settle-up payments drive balances.
+  const ledger = (expensesRes.data ?? []).map((e) => ({
     ...e,
     amount: Number(e.amount),
+    is_settlement: !!e.is_settlement,
     splits: (splitsByExpense.get(e.id) ?? []).map((s) => ({
       ...s,
       share: Number(s.share),
     })),
   }));
 
-  const balances = computeBalances(expenses);
+  const balances = computeBalances(ledger);
   // Ensure every member appears in balances (even at 0).
   for (const m of membersRes.data ?? []) {
     if (!(m.id in balances)) balances[m.id] = 0;
   }
   const settlements = computeSettlements(balances);
 
+  const expenses = ledger.filter((e) => !e.is_settlement);
+  const payments = ledger
+    .filter((e) => e.is_settlement)
+    .map((e) => ({
+      id: e.id,
+      amount: e.amount,
+      from: e.paid_by,
+      to: e.splits[0]?.member_id ?? "",
+      created_at: e.created_at,
+    }));
+
   return {
     household,
     members: membersRes.data ?? [],
     expenses,
+    payments,
     groceries: groceriesRes.data ?? [],
     balances,
     settlements,

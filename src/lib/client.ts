@@ -72,6 +72,18 @@ export const api = {
       method: "DELETE",
     }).then(jsonOrThrow),
 
+  // Record a payment from one member to another. Payments live in the expenses
+  // table, so deleting one uses deleteExpense above.
+  addSettlement: (
+    code: string,
+    body: { from: string; to: string; amount: number }
+  ) =>
+    fetch(`/api/households/${code}/settlements`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    }).then(jsonOrThrow),
+
   addGrocery: (code: string, name: string, addedBy: string) =>
     fetch(`/api/households/${code}/groceries`, {
       method: "POST",

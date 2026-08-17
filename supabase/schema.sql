@@ -21,12 +21,15 @@ create table if not exists members (
 );
 
 create table if not exists expenses (
-  id           uuid primary key default gen_random_uuid(),
-  household_id uuid not null references households(id) on delete cascade,
-  description  text not null,
-  amount       numeric(12,2) not null check (amount > 0),
-  paid_by      uuid not null references members(id) on delete cascade,
-  created_at   timestamptz not null default now()
+  id            uuid primary key default gen_random_uuid(),
+  household_id  uuid not null references households(id) on delete cascade,
+  description   text not null,
+  amount        numeric(12,2) not null check (amount > 0),
+  paid_by       uuid not null references members(id) on delete cascade,
+  -- A settlement is a payment from a debtor to a creditor, stored as an expense
+  -- (payer = debtor, single split = creditor) so it reuses the balance math.
+  is_settlement boolean not null default false,
+  created_at    timestamptz not null default now()
 );
 
 -- One row per member who shares an expense (equal split among these members).

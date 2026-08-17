@@ -25,8 +25,18 @@ export type Expense = {
   description: string;
   amount: number;
   paid_by: string;
+  is_settlement: boolean;
   created_at: string;
   splits: ExpenseSplit[];
+};
+
+// A recorded payment between two members (an expense with is_settlement=true).
+export type Payment = {
+  id: string;
+  amount: number;
+  from: string; // payer (debtor)
+  to: string; // recipient (creditor)
+  created_at: string;
 };
 
 export type Grocery = {
@@ -50,8 +60,9 @@ export type Settlement = {
 export type HouseholdData = {
   household: Household;
   members: Member[];
-  expenses: Expense[];
+  expenses: Expense[]; // real expenses only (is_settlement = false)
+  payments: Payment[]; // recorded settle-up payments
   groceries: Grocery[];
   balances: Record<string, number>; // member id -> net balance (positive = owed money)
-  settlements: Settlement[];
+  settlements: Settlement[]; // suggested transfers to reach zero
 };
