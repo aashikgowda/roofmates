@@ -2,29 +2,36 @@
 
 **FOR IMMEDIATE RELEASE**
 
-## Roofmates launches to end the awkward roommate money talk
+## Roofmates launches as the one app for everything roommates share
 
-*A dead-simple web app that splits shared household expenses and keeps one shared
-grocery list — no accounts, no spreadsheets, no group-chat math.*
+*A dead-simple web app that splits expenses, keeps a shared grocery list, and
+rotates chores — all in one place, so housemates stop juggling four different
+apps.*
 
-Today we're launching **Roofmates**, a web app that takes the two most common
-sources of roommate friction — *money* and *groceries* — and makes them
-effortless. Create a household, share a four-character code, and everyone under
-the roof is instantly on the same page about who paid for what and what the house
-still needs from the store.
+Today we're launching **Roofmates**, a single home for the everyday logistics of
+living together — *money, groceries, and chores*. Instead of a payments app for
+splitting rent, a notes app for the shopping list, and a whiteboard (or nothing)
+for whose turn it is to clean, everything lives in one place. Create a household,
+share a four-character code, and everyone under the roof is instantly on the same
+page.
 
 ### The problem
 
-Living with roommates means constantly sharing costs: rent, the electric bill,
-the Costco run, the new vacuum. Today people track this in a tangle of group
-chats, Venmo requests, and half-abandoned spreadsheets. The result is predictable
-— someone always feels they paid more than their share, nobody remembers who owes
-whom, and "can you grab milk?" gets lost three messages up. It's a small,
+Living with roommates means constantly coordinating the same handful of things:
+splitting rent and bills, keeping the fridge stocked, and sharing chores like
+cleaning and taking out the trash. The problem isn't that tools for these don't
+exist — it's that they're scattered across *different apps*. You settle up in
+Venmo or Splitwise, keep the shopping list in Notes or a group chat, and track
+whose turn it is to clean on a whiteboard, a spreadsheet, or not at all. Nobody
+wants to install and check four apps to run one apartment, so most of it falls
+back into the group chat and gets lost. The result is predictable — someone feels
+they paid more than their share, nobody remembers who owes whom, "can you grab
+milk?" scrolls out of view, and the chores quietly stop rotating. It's a small,
 recurring tax on otherwise good friendships.
 
 ### The solution
 
-Roofmates does two things, and does them well:
+Roofmates brings the three things every shared house needs into one app:
 
 - **Split expenses fairly.** Log any shared cost, choose who paid and who it's
   split between, and Roofmates keeps a running balance for every housemate. It
@@ -46,11 +53,14 @@ the end of the month.
 
 ### Why it's different
 
-Splitwise-style apps are powerful but heavy — accounts, sign-ups, and a learning
-curve for something that should take ten seconds. Group chats are frictionless
-but forget everything. Roofmates deliberately sits in between: the *speed* of a
-group chat with the *memory and math* of a real ledger. Small scope, sharp
-execution.
+Every other tool solves one slice. Splitwise handles money but knows nothing
+about your groceries or chores; a shared note holds a list but can't do the math
+or the rotation; a chore app pings you but can't split the electric bill. Roofmates
+is the *one place* for all of it — so there's a single link the whole house
+actually opens, instead of four apps only one person ever checks. It pairs the
+*speed* of a group chat with the *memory and math* of a real ledger, without the
+accounts and setup that make heavier apps a chore in themselves. Small scope,
+sharp execution.
 
 ### Availability
 
@@ -81,14 +91,17 @@ make what's already there more automatic and sticky:
    AC they weren't home to use. Plugs straight into the expense engine already
    built.
 
-3. **Accounts, multiple households & recurring expenses.**
-   Optional login so one person can belong to several households (current place +
-   the lake house), plus recurring expenses (rent on the 1st) and receipt photos.
-   This is the bridge from "great for a demo" to "the app your house actually
-   keeps using for years."
+3. **Email-based login (replacing the shared code).**
+   The four-character code is what makes onboarding instant today, but it trades
+   away privacy and identity — anyone with the code is in, and there are no real
+   accounts. Email login (magic link or password) replaces it: each person is
+   truly *themselves*, can rejoin from any device, and can belong to several
+   households (current place + the lake house). It's the bridge from "great for a
+   demo" to "the app your house trusts with its money for years" — and it unlocks
+   recurring expenses, receipt photos, and reliable reminders on top.
 
 **Why this order:** reminders finish the chore feature people can already see and
 want; vacation-aware billing reuses the vacation toggle *and* the expense math
-we've shipped, for high delight at low cost; accounts/recurring are the retention
-play once people are hooked. Each step is shippable on its own and compounds on
-the last.
+we've shipped, for high delight at low cost; email login is the trust-and-retention
+play once people are hooked, replacing the code flow that got them in the door.
+Each step is shippable on its own and compounds on the last.
