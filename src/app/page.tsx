@@ -19,9 +19,10 @@ export default function Home() {
           Shared house, sorted.
         </h1>
         <p className="mt-3 text-muted text-lg leading-relaxed">
-          Split expenses fairly and keep one shared grocery board — for everyone
-          under your roof. No accounts, no passwords. Just a household code you
-          share with your roommates.
+          One app for everything roommates share — split expenses, keep a grocery
+          board, and rotate chores. Stop juggling Venmo, a notes app, and a
+          whiteboard. No accounts, no passwords — just a household code you share
+          with your roommates.
         </p>
 
         <div className="mt-10 rounded-2xl border bg-card shadow-sm overflow-hidden">
@@ -45,14 +46,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <Feature emoji="💸" title="Split expenses">
-            Log rent, utilities and shared buys. Roofmates nets everything out
-            into the fewest “who owes whom” payments.
+            Log rent, utilities and shared buys. Roofmates nets everything into
+            the fewest “who owes whom” payments, then settle up in a tap.
           </Feature>
           <Feature emoji="🛒" title="Grocery board">
             One shared list. Anyone adds what the house needs; whoever’s at the
             store checks it off.
+          </Feature>
+          <Feature emoji="🧹" title="Chore rotation">
+            Chores rotate through the house on a schedule. On vacation? You drop
+            out of the loop until you’re back.
           </Feature>
         </div>
       </div>
