@@ -5,12 +5,16 @@ with your housemates — no accounts, just a household code.
 
 Built with **Next.js (App Router)**, **Supabase (Postgres)**, and **Tailwind CSS**.
 
-## Features (v1)
+## Features
 
 - **Split expenses** — log rent, utilities, and shared buys; pick who paid and
   who to split between. Roofmates nets everything into the fewest
-  "who owes whom" payments.
+  "who owes whom" payments, and one tap **settles up** (only for payments you're
+  part of).
 - **Grocery board** — one shared list anyone can add to and check off at the store.
+- **Chore rotation** — define a chore that rotates through chosen housemates on a
+  cadence (daily / weekly / biweekly); see whose turn it is and what's next.
+  **Vacation mode** drops a housemate out of every rotation while they're away.
 - **No logins** — create a household, share the `ROOF-XXXX` code or invite link,
   and each person just picks their name.
 
@@ -62,7 +66,7 @@ Open http://localhost:3000.
 
 ## Roadmap
 
-- Chore & trash rotation with reminders
-- Vacation calendar that auto-excludes people from utility splits
+- Chore reminders (push/email/SMS to whoever's up this week + overdue nudges)
+- Vacation-aware bill splitting (auto-exclude away housemates from utilities)
 - Real accounts + multiple households per person
 - Recurring expenses and receipt photos

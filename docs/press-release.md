@@ -34,6 +34,10 @@ Roofmates does two things, and does them well:
   reset to zero.
 - **Share one grocery board.** Anyone can add what the house needs; whoever's at
   the store checks items off and everyone sees it update. No more duplicate milk.
+- **Rotate chores fairly.** Define a chore — take out the trash, clean the
+  kitchen — and it rotates through the housemates you choose on a set cadence.
+  Everyone sees whose turn it is now and what's coming up. Going away? Flip on
+  **vacation mode** and you drop out of every rotation until you're back.
 
 There are no passwords to manage. One person creates the household, shares the
 `ROOF-XXXX` code or a link, and each roommate just picks their name. It works on
@@ -60,19 +64,22 @@ link below — no download, no credit card, no sign-up.
 
 ## Roadmap — what we'd build next
 
-The v1 above is intentionally narrow: split expenses + a grocery board, the two
-things every shared house needs on day one. The next three improvements each
-remove another recurring source of household friction:
+Today Roofmates covers the three biggest sources of housemate friction: money,
+groceries, and chores (including vacation mode). The next three improvements each
+make what's already there more automatic and sticky:
 
-1. **Chore & trash rotation with reminders.**
-   A rotating schedule for cleaning and taking out the trash, with a notification
-   to whoever's up this week (push/email). Turns "it's *your* turn" arguments into
-   a calendar everyone already agreed to.
+1. **Chore reminders.**
+   The rotation exists — now push a notification (push/email/SMS) to whoever's up
+   this week, and a nudge when a turn is overdue. This turns the schedule from
+   something you check into something that reaches out, closing the loop on "I
+   forgot it was my week."
 
-2. **Vacation calendar with automatic bill exclusion.**
-   Housemates mark the days they're away. When the bill-payer logs a utility like
-   electricity, Roofmates automatically pro-rates it — so nobody pays for AC they
-   weren't home to use. This plugs directly into the expense engine already built.
+2. **Vacation-aware bill splitting.**
+   Vacation mode already pulls people out of chores; extend the same toggle to
+   money. When the bill-payer logs a utility like electricity, Roofmates
+   automatically excludes (or pro-rates) anyone who was away — so nobody pays for
+   AC they weren't home to use. Plugs straight into the expense engine already
+   built.
 
 3. **Accounts, multiple households & recurring expenses.**
    Optional login so one person can belong to several households (current place +
@@ -80,7 +87,8 @@ remove another recurring source of household friction:
    This is the bridge from "great for a demo" to "the app your house actually
    keeps using for years."
 
-**Why this order:** chores are the #1 non-money friction point and reuse our
-notification groundwork; vacation exclusion is high-delight and leans on the
-expense math we've already shipped; accounts/recurring are the retention play once
-people are hooked. Each step is shippable on its own and compounds on the last.
+**Why this order:** reminders finish the chore feature people can already see and
+want; vacation-aware billing reuses the vacation toggle *and* the expense math
+we've shipped, for high delight at low cost; accounts/recurring are the retention
+play once people are hooked. Each step is shippable on its own and compounds on
+the last.

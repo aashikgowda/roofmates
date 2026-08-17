@@ -81,7 +81,7 @@ you have breathing room.
 
 ---
 
-### 3:15–4:15 — Grocery board
+### 3:15–3:50 — Grocery board
 
 > "The other daily friction: groceries."
 
@@ -98,15 +98,39 @@ you have breathing room.
 
 ---
 
-### 4:15–4:45 — Close (vision + roadmap)
+### 3:50–4:40 — Chores & vacation mode
 
-> "That's Roofmates today: fair expenses and a shared grocery list, with zero
-> setup. Next I'm adding a **chore rotation with reminders**, and a **vacation
-> calendar** that automatically excludes you from the electric bill when you're
-> away. The goal is simple — take every little thing roommates argue about and
-> quietly make it fair. Thanks for watching."
+> "And the classic roommate argument: whose turn is it to clean?"
 
-*On screen:* end on the dashboard, balances settled.
+- Switch to the **Chores** tab.
+- **Add a chore:** "Take out the trash", **Weekly**, rotating through everyone →
+  **Add chore**.
+
+> "I set it up once, and it just rotates. Everyone can see it's my turn this
+> week, and Cara's next — no more 'I did it last time.'"
+
+- Point to **Whose turn** and **Coming up**.
+- Now, in the "Who's around" card, flip **Ben** to **vacation mode**.
+
+> "Here's my favorite part. Say Ben's traveling for work. He flips on vacation
+> mode — and watch: he drops straight out of the rotation. No asking someone to
+> cover, no doing his week when he's back. When he returns, he's back in."
+
+- Point to the rotation updating to skip Ben.
+
+---
+
+### 4:40–5:00 — Close (vision + roadmap)
+
+> "That's Roofmates: fair expenses, a shared grocery list, and chores that
+> rotate themselves — all with zero setup. Next I'd add **reminders** so the app
+> nudges whoever's up this week, and extend vacation mode to **automatically
+> leave you off the electric bill** when you're away. The goal is simple — take
+> every little thing roommates argue about and quietly make it fair. Thanks for
+> watching."
+
+*On screen:* end on the Chores tab showing the rotation, or back on settled
+balances.
 
 ---
 
