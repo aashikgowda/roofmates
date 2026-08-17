@@ -66,10 +66,18 @@ you have breathing room.
 
 > "Here's the magic: instead of a tangle of 'you owe me, I owe them,' Roofmates
 > nets it all down to the *fewest* payments. It just tells us exactly who pays
-> whom, and how much. One tap and we're square."
+> whom, and how much."
 
 - (Optional) Switch to the incognito/Ben window to show the *same* numbers from
   Ben's point of view — "you owe" instead of "you're owed."
+
+- Now tap **Settle** next to one of the suggested payments.
+
+> "And when someone actually pays — say Cara sends me the money on Venmo — I tap
+> Settle, and watch: her balance drops to zero and the payment shows up in our
+> history. No arguments, no 'wait, did you ever pay me back?' It's just done."
+
+- Point to the balance updating and the new entry under **Payments**.
 
 ---
 

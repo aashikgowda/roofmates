@@ -30,6 +30,8 @@ Roofmates does two things, and does them well:
   split between, and Roofmates keeps a running balance for every housemate. It
   then nets everything down to the *fewest possible payments* — instead of six
   tangled IOUs, it just tells you "Cara pays Aashik $30, Ben pays Aashik $15."
+  When the money actually changes hands, one tap **settles up** and the balances
+  reset to zero.
 - **Share one grocery board.** Anyone can add what the house needs; whoever's at
   the store checks items off and everyone sees it update. No more duplicate milk.
 
