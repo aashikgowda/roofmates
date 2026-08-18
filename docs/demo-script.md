@@ -1,8 +1,8 @@
 # Roofmates — 5-minute demo script
 
 A shot-by-shot script for the demo video. Pitching to **end users** (people who
-live with roommates), not engineers. Keep it warm and concrete. Target ~4:30 so
-you have breathing room.
+live with roommates), not engineers. Keep it warm and concrete. It runs ~5:00 as
+written — if you need buffer, trim the roommates-join beat or shorten groceries.
 
 **Before you record:**
 - Have the live Vercel link open in one browser window.
@@ -14,12 +14,13 @@ you have breathing room.
 
 ### 0:00–0:30 — The hook (the problem)
 
-> "If you've ever lived with roommates, you know this feeling: rent's split three
-> ways, someone covered the electric bill, you grabbed groceries last week… and
-> nobody actually knows who owes whom. It lives in a messy group chat and a
-> spreadsheet no one updates. I built **Roofmates** to fix exactly that."
+> "If you've lived with roommates, you know the drill: you split rent in Venmo,
+> keep the grocery list in a group chat, and argue over whose turn it is to take
+> out the trash. That's three different apps to run one apartment — so half of it
+> gets forgotten and someone always feels shortchanged. I built **Roofmates** to
+> put all of it in one place."
 
-*On screen:* the landing page — "Shared house, sorted."
+*On screen:* the landing page — "One app for everything roommates share."
 
 ---
 
@@ -122,12 +123,11 @@ you have breathing room.
 
 ### 4:40–5:00 — Close (vision + roadmap)
 
-> "That's Roofmates: fair expenses, a shared grocery list, and chores that
-> rotate themselves — all with zero setup. Next I'd add **reminders** so the app
-> nudges whoever's up this week, and extend vacation mode to **automatically
-> leave you off the electric bill** when you're away. The goal is simple — take
-> every little thing roommates argue about and quietly make it fair. Thanks for
-> watching."
+> "That's Roofmates: money, groceries, and chores — the whole shared house in one
+> app instead of three, with zero setup. Next I'd add **reminders** so it nudges
+> whoever's up this week, and extend vacation mode to **automatically leave you
+> off the electric bill** when you're away. The goal is simple — take every little
+> thing roommates argue about and quietly make it fair. Thanks for watching."
 
 *On screen:* end on the Chores tab showing the rotation, or back on settled
 balances.
