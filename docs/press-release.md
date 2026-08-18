@@ -78,30 +78,29 @@ Today Roofmates covers the three biggest sources of housemate friction: money,
 groceries, and chores (including vacation mode). The next three improvements each
 make what's already there more automatic and sticky:
 
-1. **Chore reminders.**
-   The rotation exists — now push a notification (push/email/SMS) to whoever's up
-   this week, and a nudge when a turn is overdue. This turns the schedule from
-   something you check into something that reaches out, closing the loop on "I
-   forgot it was my week."
+1. **Flexible expense splitting.**
+   Today every expense splits evenly, which covers most cases but not all. Next up:
+   split by exact amounts, percentages, or shares — so the person with the bigger
+   room pays more of the rent, someone who skipped the group dinner isn't charged
+   for it, and one-off items can go to just the people who used them. Same
+   settle-up math underneath; just more ways in.
 
-2. **Vacation-aware bill splitting.**
-   Vacation mode already pulls people out of chores; extend the same toggle to
-   money. When the bill-payer logs a utility like electricity, Roofmates
-   automatically excludes (or pro-rates) anyone who was away — so nobody pays for
-   AC they weren't home to use. Plugs straight into the expense engine already
-   built.
-
-3. **Email-based login (replacing the shared code).**
+2. **Email-based login (replacing the shared code).**
    The four-character code is what makes onboarding instant today, but it trades
    away privacy and identity — anyone with the code is in, and there are no real
    accounts. Email login (magic link or password) replaces it: each person is
    truly *themselves*, can rejoin from any device, and can belong to several
    households (current place + the lake house). It's the bridge from "great for a
-   demo" to "the app your house trusts with its money for years" — and it unlocks
-   recurring expenses, receipt photos, and reliable reminders on top.
+   demo" to "the app your house trusts with its money for years."
 
-**Why this order:** reminders finish the chore feature people can already see and
-want; vacation-aware billing reuses the vacation toggle *and* the expense math
-we've shipped, for high delight at low cost; email login is the trust-and-retention
-play once people are hooked, replacing the code flow that got them in the door.
-Each step is shippable on its own and compounds on the last.
+3. **Chore reminders.**
+   The rotation exists — now push a notification (push/email/SMS) to whoever's up
+   this week, and a nudge when a turn is overdue. This turns the schedule from
+   something you check into something that reaches out, closing the loop on "I
+   forgot it was my week."
+
+**Why this order:** flexible splitting deepens the feature people use most and
+removes the biggest "but our rent isn't even" objection; email login is the
+trust-and-retention play that replaces the code flow once people are hooked; chore
+reminders finish the newest feature by making it reach out instead of waiting to
+be checked. Each step is shippable on its own and compounds on the last.
