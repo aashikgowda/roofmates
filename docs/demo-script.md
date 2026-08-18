@@ -14,7 +14,7 @@ written — if you need buffer, trim the roommates-join beat or shorten grocerie
 
 ### 0:00–0:30 — The hook (the problem)
 
-> "If you've lived with roommates, you know the drill: you split rent in Venmo,
+> "I live with housemates, and here's the drill: you split bills in Splitwise,
 > keep the grocery list in a group chat, and argue over whose turn it is to take
 > out the trash. That's three different apps to run one apartment — so half of it
 > gets forgotten and someone always feels shortchanged. I built **Roofmates** to
@@ -26,7 +26,7 @@ written — if you need buffer, trim the roommates-join beat or shorten grocerie
 
 ### 0:30–1:15 — Create a household (30 seconds to value)
 
-> "There's no sign-up. I just start a household."
+> "There's no sign-up right now to keep things simple. I just start a household."
 
 - Type household name "**12 Maple St**" and your name "**Aashik**" → **Create
   household**.
@@ -53,7 +53,7 @@ written — if you need buffer, trim the roommates-join beat or shorten grocerie
 
 ### 2:00–3:15 — Split expenses (the core)
 
-> "Now the part that actually saves friendships — money."
+> "Now I am going to demo the part of splitting expenses."
 
 - **Add expense:** "Rent", **1800**, paid by Aashik, split between all three →
   **Add expense**.
@@ -95,13 +95,13 @@ written — if you need buffer, trim the roommates-join beat or shorten grocerie
 - Switch back → show Milk moved to **Bought**, tagged "bought by Ben".
 
 > "Whoever's at the store checks it off, and everyone sees it instantly. No more
-> coming home with three cartons of milk."
+> synchronous communication needed when someone is at the store."
 
 ---
 
 ### 3:50–4:40 — Chores & vacation mode
 
-> "And the classic roommate argument: whose turn is it to clean?"
+> "And the classic housemate argument: whose turn is it to clean?"
 
 - Switch to the **Chores** tab.
 - **Add a chore:** "Take out the trash", **Weekly**, rotating through everyone →
@@ -124,10 +124,11 @@ written — if you need buffer, trim the roommates-join beat or shorten grocerie
 ### 4:40–5:00 — Close (vision + roadmap)
 
 > "That's Roofmates: money, groceries, and chores — the whole shared house in one
-> app instead of three, with zero setup. Next I'd add **reminders** so it nudges
-> whoever's up this week, and extend vacation mode to **automatically leave you
+> app instead of three, with minimal setup. Next I'd add different ways to split the bill,
+> **reminders** so it nudges whoever's up this week, and extend vacation mode to **automatically leave you
 > off the electric bill** when you're away. The goal is simple — take every little
-> thing roommates argue about and quietly make it fair. Thanks for watching."
+> thing roommates argue about and quietly make it fair. I would also replace the code-based
+> login flow with email login. Thanks for watching."
 
 *On screen:* end on the Chores tab showing the rotation, or back on settled
 balances.
