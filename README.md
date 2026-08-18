@@ -66,7 +66,8 @@ Open http://localhost:3000.
 
 ## Roadmap
 
-- Chore reminders (push/email/SMS to whoever's up this week + overdue nudges)
-- Vacation-aware bill splitting (auto-exclude away housemates from utilities)
-- Real accounts + multiple households per person
-- Recurring expenses and receipt photos
+1. **Flexible expense splitting** — split by exact amounts, percentages, or shares
+   (today everything splits evenly), on the same settle-up math.
+2. **Email-based login** — replace the shared code with real accounts (magic link
+   or password) for identity, privacy, cross-device, and multiple households.
+3. **Chore reminders** — push/email/SMS to whoever's up this week + overdue nudges.
